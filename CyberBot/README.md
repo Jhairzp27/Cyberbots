@@ -2,7 +2,7 @@
 
 ## Diagramas de clase
 
-![Diagrama de clase](Images/image.png)
+![Diagrama de clase](Images/DC_Cyberbots.png)
 
 ## Use Case
 
