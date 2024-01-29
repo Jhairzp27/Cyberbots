@@ -1,3 +1,4 @@
+import java.util.*;
 /**
  *  @author: Isaac Proaño
  *  @date: 27 - 01 - 2023
@@ -7,26 +8,27 @@ public class IPExoBot {
     
     private CPPiernaIzquierda cpPiernaIzquierda;
     private CPPiernaDerecha cpPiernaDerecha;
-
+    private boolean srConectado;
+    private APBrazoDer APBrazoDer;
+    private APBrazoIzq APBrazoIzq;
+    private SRFuenteDePoder fuenteDePoder;
     public void cpConectarPiernas(CPPiernaIzquierda cpPiernaIzq, CPPiernaDerecha cpPiernaDer){
         cpPiernaIzquierda = cpPiernaIzq;
         cpPiernaDerecha = cpPiernaDer;
     }
-
     public void cpCorrer(){
         if(cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
             System.out.println("ExoBot corriendo a: " + cpPiernaIzquierda.getCpVelocidadMaxima());
         else
             System.out.println("< Error! > [ No se puede correr ya que una o ambas extremidades inferiores fueron desacopladas ]");
     }
-
     public void cpSaltar(){
         if(cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
             System.out.println("ExoBot saltando " + cpPiernaIzquierda.getCpSaltoMaximo());
         else
             System.out.println("< Error! > [ No se puede saltar ya que una o ambas extremidades inferiores fueron desacopladas ]");
     }
-    
+
     public void cpSacrificarPiernaIzquierda(){
         cpPiernaIzquierda.cpSacrificar();
         System.out.println("La pierna " + cpPiernaIzquierda.getCpLado() + "Ha sido descoplada con exito");
@@ -36,5 +38,52 @@ public class IPExoBot {
         cpPiernaDerecha.cpSacrificar();
         System.out.println("La pierna " + cpPiernaDerecha.getCpLado() + "Ha sido desacoplada con exito!");
     }
+
+    public boolean srVerificarConexion(){
+        return srConectado=true;
+    }
+
+    public void srDispararArmaDerecho() {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            try {
+                System.out.println("Seleccione el arma a disparar: ");
+                String srArma = scanner.nextLine();
+                APBrazoDer = new APBrazoDer("Derecho", srArma);
+                APBrazoDer.APIncorporarArma();
+                System.out.println("Disparando el arma " + srArma);
+                break;  
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error! Seleccione un arma válido");
+            } catch (Exception e) {
+                System.out.println("Error general: " + e.getMessage());
+            }
+        }
+    }
+    public void srDispararArmaIzq() {
+        Scanner scanner = new Scanner(System.in);
     
+        while (true) {
+            try {
+                System.out.println("Seleccione el arma a disparar: ");
+                String srArma = scanner.nextLine();
+                APBrazoIzq = new APBrazoIzq("Izquierdo", srArma);
+                APBrazoIzq.APIncorporarArma();
+                System.out.println("Disparando el arma " + srArma);
+                break; 
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error! Seleccione un arma válida");
+            } catch (Exception e) {
+                System.out.println("Error general: " + e.getMessage());
+            }
+        }
+    }
+
+     public SRFuenteDePoder srGetFuenteDePoder() {
+        return fuenteDePoder;
+    }
+    public void srIncorporarFuenteDePoder(SRFuenteDePoder fuenteDePoder) {
+        this.fuenteDePoder = fuenteDePoder;
+    }
+
 }
