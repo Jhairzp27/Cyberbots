@@ -4,16 +4,14 @@
  *  @version: 1.0
  */
 
-public class CPPierna {
-    private String cpLado;
+public class CPParteInferior {
     private String cpVelocidadMaxima;
     private String cpSaltoMaximo;
     private boolean cpConectada;
     
-    public CPPierna(String cpLado) {
-        this.cpLado = cpLado;
+    public CPParteInferior() {
         this.cpVelocidadMaxima = "200 km/h"; // Valor predeterminado
-        this.cpSaltoMaximo = "50 m";         // Valor predeterminado
+        this.cpSaltoMaximo = "50 metros";    // Valor predeterminado
         this.cpConectada = true;
     }
     
@@ -28,9 +26,8 @@ public class CPPierna {
     public boolean cpVerificarConexion() {
         return cpConectada;
     }
-    
+
     public void cpSacrificar() {
-        System.out.println("Pierna  " + cpLado + " ha sido sacrificada");
-        cpConectada = false;
+        this.cpConectada = false;
     }
 }
