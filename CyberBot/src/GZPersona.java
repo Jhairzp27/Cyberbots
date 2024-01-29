@@ -1,4 +1,4 @@
-public abstract class GZPersona implements IGZHabilidades {
+public abstract class GZPersona {
     private String gzHabilidades;
 
     public GZPersona() {
