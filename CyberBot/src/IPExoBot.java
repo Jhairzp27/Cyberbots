@@ -5,39 +5,36 @@
  */
 public class IPExoBot {
     
+    private CPPiernaIzquierda cpPiernaIzquierda;
+    private CPPiernaDerecha cpPiernaDerecha;
 
+    public void cpConectarPiernas(CPPiernaIzquierda cpPiernaIzq, CPPiernaDerecha cpPiernaDer){
+        cpPiernaIzquierda = cpPiernaIzq;
+        cpPiernaDerecha = cpPiernaDer;
+    }
 
-    // // Extremidades inferiores exobot
-    // private CPPiernaIzquierda cpPiernaIzquierda;
-    // private CPPiernaDerecha cpPiernaDerecha;
+    public void cpCorrer(){
+        if(cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
+            System.out.println("ExoBot corriendo a: " + cpPiernaIzquierda.getCpVelocidadMaxima());
+        else
+            System.out.println("< Error! > [ No se puede correr ya que una o ambas extremidades inferiores fueron desacopladas ]");
+    }
 
-    // // Agregación
-    // public void cpConectarPiernas(CPPiernaIzquierda cpPiernaIzq,  CPPiernaDerecha cpPiernaDer) {
-    //     cpPiernaIzquierda = cpPiernaIzq;
-    //     cpPiernaDerecha = cpPiernaDer;
-    // }
+    public void cpSaltar(){
+        if(cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
+            System.out.println("ExoBot saltando " + cpPiernaIzquierda.getCpSaltoMaximo());
+        else
+            System.out.println("< Error! > [ No se puede saltar ya que una o ambas extremidades inferiores fueron desacopladas ]");
+    }
+    
+    public void cpSacrificarPiernaIzquierda(){
+        cpPiernaIzquierda.cpSacrificar();
+        System.out.println("La pierna " + cpPiernaIzquierda.getCpLado() + "Ha sido descoplada con exito");
+    }
 
-    // public void cpCorrer() {
-    //     if(cpPiernaIzquierda.cpVerificarConexion()  && cpPiernaDerecha.cpVerificarConexion())
-    //         System.out.println("ExoBot corriendo a " + cpPiernaIzquierda.getCpVelocidadMaxima());
-    //     else
-    //         System.out.println("No se puede correr ya que una o ambas piernas fueron sacrificadas");
-    // }
-
-    // public void cpSaltar() {
-    //     if(cpPiernaIzquierda.cpVerificarConexion()  && cpPiernaDerecha.cpVerificarConexion())
-    //         System.out.println("ExoBot saltando " + cpPiernaIzquierda.getCpSaltoMaximo());
-    //     else
-    //         System.out.println("No se puede saltar ya que una o ambas piernas fueron sacrificadas");
-    // }
-
-    // public void cpSacrificarPiernaIzquierda() {
-    //     cpPiernaIzquierda.cpSacrificar();
-    //     System.out.println("La pierna " + cpPiernaIzquierda.getCpLado() + " ha sido sacrificada");
-    // }
-
-    // public void cpSacrificarPiernaDerecha() {
-    //     cpPiernaDerecha.cpSacrificar();
-    //     System.out.println("La pierna " + cpPiernaDerecha.getCpLado() + " ha sido sacrificada");
-    // }
+    public void cpSacrificarPiernaDerecha(){
+        cpPiernaDerecha.cpSacrificar();
+        System.out.println("La pierna " + cpPiernaDerecha.getCpLado() + "Ha sido desacoplada con exito!");
+    }
+    
 }
