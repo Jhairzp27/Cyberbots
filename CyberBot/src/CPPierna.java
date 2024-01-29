@@ -4,17 +4,23 @@
  *  @version: 1.0
  */
 
-public class CPParteInferior {
+public abstract class CPPierna {
+    private String cpLado;
     private String cpVelocidadMaxima;
     private String cpSaltoMaximo;
     private boolean cpConectada;
     
-    public CPParteInferior() {
+    public CPPierna(String cpLado) {
+        this.cpLado = cpLado;
         this.cpVelocidadMaxima = "200 km/h"; // Valor predeterminado
         this.cpSaltoMaximo = "50 metros";    // Valor predeterminado
         this.cpConectada = true;
     }
     
+    public String getCpLado() {
+        return cpLado;
+    }
+
     public String getCpVelocidadMaxima() {
         return cpVelocidadMaxima;
     }
