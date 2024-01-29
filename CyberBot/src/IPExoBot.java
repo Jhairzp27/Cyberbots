@@ -8,29 +8,36 @@ public class IPExoBot {
 
 
     // // Extremidades inferiores exobot
-    // private CPParteInferior cpParteInferior;
+    // private CPPiernaIzquierda cpPiernaIzquierda;
+    // private CPPiernaDerecha cpPiernaDerecha;
 
     // // Agregación
-    // public void cpConectarParteInferior(CPParteInferior cpParteInferior) {
-    //     this.cpParteInferior = cpParteInferior;
+    // public void cpConectarPiernas(CPPiernaIzquierda cpPiernaIzq,  CPPiernaDerecha cpPiernaDer) {
+    //     cpPiernaIzquierda = cpPiernaIzq;
+    //     cpPiernaDerecha = cpPiernaDer;
     // }
 
     // public void cpCorrer() {
-    //     if(cpParteInferior.cpVerificarConexion())
-    //         System.out.println("ExoBot corriendo a " + cpParteInferior.getCpVelocidadMaxima());
+    //     if(cpPiernaIzquierda.cpVerificarConexion()  && cpPiernaDerecha.cpVerificarConexion())
+    //         System.out.println("ExoBot corriendo a " + cpPiernaIzquierda.getCpVelocidadMaxima());
     //     else
-    //         System.out.println("No se puede correr ya que la parte inferior fue sacrificada");
+    //         System.out.println("No se puede correr ya que una o ambas piernas fueron sacrificadas");
     // }
 
     // public void cpSaltar() {
-    //     if(cpParteInferior.cpVerificarConexion())
-    //         System.out.println("ExoBot saltando " + cpParteInferior.getCpSaltoMaximo());
+    //     if(cpPiernaIzquierda.cpVerificarConexion()  && cpPiernaDerecha.cpVerificarConexion())
+    //         System.out.println("ExoBot saltando " + cpPiernaIzquierda.getCpSaltoMaximo());
     //     else
-    //         System.out.println("No se puede saltar ya que la parte inferior fue sacrificada");
+    //         System.out.println("No se puede saltar ya que una o ambas piernas fueron sacrificadas");
     // }
 
-    // public void cpSacrificarParteInferior() {
-    //     cpParteInferior.cpSacrificar();
-    //     System.out.println("La parte inferior ha sido sacrificada");
+    // public void cpSacrificarPiernaIzquierda() {
+    //     cpPiernaIzquierda.cpSacrificar();
+    //     System.out.println("La pierna " + cpPiernaIzquierda.getCpLado() + " ha sido sacrificada");
+    // }
+
+    // public void cpSacrificarPiernaDerecha() {
+    //     cpPiernaDerecha.cpSacrificar();
+    //     System.out.println("La pierna " + cpPiernaDerecha.getCpLado() + " ha sido sacrificada");
     // }
 }
