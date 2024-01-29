@@ -71,22 +71,31 @@ public abstract class pjIABot {
         int pjCodigoGenerado = 1000 + random.nextInt(9000); // Genera números aleatorios entre 1000 a 9999
         return "Código de Activación: " + pjCodigoGenerado;
     }
-
+    /*
+     * Obtener código de Activación del ExoBot
+     */
     public String getPjCodigoActivacion() {
         return pjCodigoActivacion;
     }
 
+    /*
+     * Asignar serie al ExoBot
+     */
     public String pjAsignarSerie() {
         Random random = new Random();
         int pjSerieGenerada = 1000 + random.nextInt(9000); // Genera números aleatorios entre 1000 a 9999
         return "Serie del ExoBot: " + pjSerieGenerada;
     }
 
+    /* Obtener la serie del ExoBot */
     public String getPjSerieExoBot() {
         return pjSerieExoBot;
     }
 
-    public void supervisarRecarga() {
+    /*
+     * Supervisar la recarga del ExoBot
+     */
+    public void pjSupervisarRecarga() {
         System.out.println("Supervisando recarga del ExoBot");
     }
 }
