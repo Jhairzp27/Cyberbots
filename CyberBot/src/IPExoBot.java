@@ -11,9 +11,12 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
     private APBrazoIzq APBrazoIzq;
     private CPPiernaIzquierda cpPiernaIzquierda;
     private CPPiernaDerecha cpPiernaDerecha;
-    private SRFuenteDePoder fuenteDePoder;
+    private RRFuenteDePoder cpFuenteDePoder;
 
-    
+    public IPExoBot() {
+        cpFuenteDePoder = new RRFuenteDePoder();
+    }
+
     public boolean srVerificarConexion() {
         return srConectado = true;
     }
@@ -55,12 +58,32 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
         }
     }
 
-    public SRFuenteDePoder srGetFuenteDePoder() {
-        return fuenteDePoder;
+    public void cpActivarFuentePoder() {
+        cpFuenteDePoder.setRrActiva(true);
+        System.out.println("Fuente de poder activada.");
     }
 
-    public void srIncorporarFuenteDePoder(SRFuenteDePoder fuenteDePoder) {
-        this.fuenteDePoder = fuenteDePoder;
+    public void cpDesactivarFuentePoder() {
+        cpFuenteDePoder.setRrActiva(false);
+        System.out.println("Fuente de poder desactivada.");
+    }
+
+    public void rrCargarEnergia(int rrCantidad) {
+        if (cpFuenteDePoder.isRrActiva()) {
+            cpFuenteDePoder.setRrNivelEnergia(rrCantidad);
+            System.out.println("Energía cargada. Nivel actual: " + cpFuenteDePoder.getRrNivelEnergia());
+        } else {
+            System.out.println("No se puede cargar energía. La fuente de poder está desactivada.");
+        }
+    }
+
+    public void consumirEnergia(int rrCantidad) {
+        if (cpFuenteDePoder.isRrActiva() && cpFuenteDePoder.getRrNivelEnergia() >= rrCantidad) {
+            cpFuenteDePoder.setRrNivelEnergia(rrCantidad);
+            System.out.println("Energía consumida. Nivel actual: " + cpFuenteDePoder.getRrNivelEnergia());
+        } else {
+            System.out.println("No hay suficiente energía o la fuente de poder está desactivada.");
+        }
     }
 
     @Override
