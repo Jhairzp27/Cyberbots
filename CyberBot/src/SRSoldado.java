@@ -18,25 +18,8 @@ public class SRSoldado extends GZPersona {
         }
     }
     public void srDispararArmas(){
-       Scanner scanner = new Scanner(System.in);
-       while(true){
-       try{
-        System.out.println("Seleccione el brazo para disparar ('Derecho' o 'Izquierdo'): ");
-        String seleccionBrazo = scanner.nextLine();
-
-        if ("Derecho".equalsIgnoreCase(seleccionBrazo)) {
-            exobot.srDispararArmaDerecho();
-            break;
-        } else if ("Izquierdo".equalsIgnoreCase(seleccionBrazo)) {
-            exobot.srDispararArmaIzq();
-            break;
-        } else {
-            System.out.println("< Error! > [ Selección de brazo no válida ]");
-        }
-    }catch(InputMismatchException e){
-        System.out.println("< Error! > [ Debes ingresar una opción válida) ]");
-        scanner.nextLine();
+       
         }
     }
- }
-}
+
+
