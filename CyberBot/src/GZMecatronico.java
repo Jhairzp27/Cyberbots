@@ -1,10 +1,7 @@
 
 public class GZMecatronico extends GZPersona {
-    private void crearExobot() {
-        System.out.println("Creando exobot...");
-    }
 
-    private void personalizarExobot() {
-        System.out.println("Personalizando exobot...");
-    }
+    void crearExobot() {System.out.println("\t"+IPColors.ORANGE_BACKGROUND+"Creando exobot..." + IPColors.RESET);}
+
+    void personalizarExobot() {System.out.println("\t"+IPColors.ORANGE_BACKGROUND+"Personalizando exobot..."+IPColors.RESET);}
 }

@@ -1,12 +1,11 @@
 import java.util.*;
-
 /**
  * @author: Isaac Proaño
  * @date: 27 - 01 - 2023
  * @version: 1.0
  */
 public class IPExoBot extends pjIABot {
-
+    
     private CPPiernaIzquierda cpPiernaIzquierda;
     private CPPiernaDerecha cpPiernaDerecha;
     private boolean srConectado;
@@ -105,7 +104,7 @@ public class IPExoBot extends pjIABot {
         switch (pjOpcion) {
             case 1:
                 pjArmaBrz = "Metralladora";
-                APBrazoIzq = new APBrazoIzq(pjBrazo, pjArmaBrz);
+                APBrazoIzq = new APBrazoIzq(pjBrazo, pjArmaBrz);    
                 System.out.println();
                 APBrazoIzq.APIncorporarArma();
                 break;
@@ -140,6 +139,37 @@ public class IPExoBot extends pjIABot {
                 APBrazoDer.APIncorporarArma();
                 break;
         }
+    }
+
+    Hashtable<Integer, String> ssListaAprendizajes = new Hashtable<>();
+
+    /*
+     * Aprender ingles
+     */
+    @Override
+    public String ssAprenderIdiomaIngles() {
+        ssListaAprendizajes.put(1, " Ingles");
+        return "Aprendiendo Ingles";
+    }
+    /*
+     * Aprender espanol
+     */
+
+    @Override
+    public String ssAprenderIdiomaEspanol() {
+        ssListaAprendizajes.put(2, " Espanol");
+        return "Aprendiendo Espanol";
+    }
+    /*
+     * Mostrar los idiomas aprendidos
+     */
+
+    public void ssMostrarIdiomasAprendidos() {
+        System.out.println("IAbot ha logrado aprender:");
+        ssListaAprendizajes.forEach((k, v) -> {
+            System.out.print(v + " , ");
+        });
+        System.out.println();
     }
 
     public void pjAsignarArma() {
