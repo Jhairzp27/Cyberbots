@@ -11,7 +11,7 @@ public class SSExpertoEspanol extends SSExperto {
         return ssNombreExpertoEspanol;
     }
 
-    public void ssEnsenarIdioma(SSIAlumnoEspanol ssAlumnoEspanol) {
+    public void ssEnsenarIdioma(IPExoBot ssAlumnoEspanol) {
         System.out.println(ssAlumnoEspanol.ssAprenderIdiomaEspanol() + " de el maestro " + getSsNombreExpertoEspanol());
     }
 
