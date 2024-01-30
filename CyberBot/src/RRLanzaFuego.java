@@ -7,6 +7,13 @@
  */
 
 
-public class RRLanzaFuego {
-
+public class RRLanzaFuego extends RRArma{
+    @Override
+    public void rrDisparar() {
+        if (rrEstaEncendida() && rrTieneMuniciones()) {
+            System.out.println("¡Lanzando fuego con la lanza fuego!");
+        } else {
+            System.out.println("No se puede disparar. Verifica que el arma esté encendida y con municiones.");
+        }
+    }
 }

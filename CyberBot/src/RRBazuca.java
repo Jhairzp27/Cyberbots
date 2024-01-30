@@ -7,6 +7,15 @@
  */
 
 
-public class RRBazuca {
+public class RRBazuca extends RRArma {
+    // Implementación del método abstracto
+    @Override
+    public void rrDisparar() {
+        if (rrEstaEncendida() && rrTieneMuniciones()) {
+            System.out.println("¡Disparo de la bazuca!");
+        } else {
+            System.out.println("No se puede disparar. Verifica que el arma esté encendida y cargada.");
+        }
+    }
 
 }

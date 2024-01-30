@@ -15,6 +15,14 @@ public abstract class RRArma {
         this.rrConMuniciones = false;
     }
 
+    public boolean rrEstaEncendida() {
+        return rrEncendida;
+    }
+
+    public boolean rrTieneMuniciones() {
+        return rrConMuniciones;
+    }
+
     // Métodos abstractos a ser implementados por las clases hijas
     public abstract void rrDisparar();
 
