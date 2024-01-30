@@ -1,13 +1,11 @@
-import java.util.Hashtable;
-import java.util.Scanner;
-
+import java.util.*;
 /**
  * @author: Isaac Proaño
  * @date: 27 - 01 - 2023
  * @version: 1.0
  */
-public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngles {
-
+public class IPExoBot extends pjIABot {
+    
     private CPPiernaIzquierda cpPiernaIzquierda;
     private CPPiernaDerecha cpPiernaDerecha;
     private boolean srConectado;
@@ -172,5 +170,9 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
             System.out.print(v + " , ");
         });
         System.out.println();
+    }
+
+    public void pjAsignarArma() {
+        super.pjAsignarArma();
     }
 }
