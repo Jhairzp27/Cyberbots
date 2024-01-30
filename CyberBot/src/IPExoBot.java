@@ -156,7 +156,7 @@ public class IPExoBot extends PJIABot {
 
     public void IPSacrificarPiernaIzquierda() {
         cpPiernaIzquierda.cpSacrificar();
-        System.out.println("La pierna " + cpPiernaIzquierda.getCpLado() + " ha sido descoplada con exito");
+        System.out.println("La pierna " + cpPiernaIzquierda.getCpLado() + " ha sido desacoplada con exito");
     }
 
     public void IPSacrificarPiernaDerecha() {
