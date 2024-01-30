@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Hashtable;
+import java.util.Scanner;
 
 /**
  * @author: Isaac Proaño
@@ -105,7 +106,7 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
         switch (pjOpcion) {
             case 1:
                 pjArmaBrz = "Metralladora";
-                APBrazoIzq = new APBrazoIzq(pjBrazo, pjArmaBrz);
+                APBrazoIzq = new APBrazoIzq(pjBrazo, pjArmaBrz);    
                 System.out.println();
                 APBrazoIzq.APIncorporarArma();
                 break;

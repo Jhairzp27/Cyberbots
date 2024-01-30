@@ -17,8 +17,7 @@ public class Witherun {
                 + ipUbicacion + color.RESET);
 
         GZMecatronico mecatronico = new GZMecatronico();
-        mecatronico.personalizarExobot();
-        mecatronico.crearExobot();
+        // mecatronico.gzRealizarActividad();
         // SSExpertoEspanol ssExpertoEspanol= new SSExpertoEspanol();
         // SSExpertoIngles ssExpertoIngles= new SSExpertoIngles();
         System.out.println(

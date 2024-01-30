@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-public abstract class PJIABot {
+public abstract class pjIABot {
     static Scanner sc = new Scanner(System.in);
     String pjCodigoActivacion;
     String pjSerieExoBot;
