@@ -41,21 +41,22 @@ public class Witherun {
                 SSExpertoIngles oSsExpertoIngles = new SSExpertoIngles();
                 IPExoBot exoBot = new IPExoBot();
 
-                // Creacion de exobot mediante el codigo de activacion
-                mecatronico.crearExobot(oExoBot);
-                mecatronico.personalizarExobot();
-                // SSExpertoEspanol ssExpertoEspanol= new SSExpertoEspanol();
-                // SSExpertoIngles ssExpertoIngles= new SSExpertoIngles();
-                System.out.println(
-                                "\u001B[34m"
-                                                + "Para un mejor desenvolvimiento en la batalla, el IAbot del exobot aprenderá los idiomas básicos");
-                oSsExpertoEspanol.ssEnsenarIdioma(oExoBot);
-                oSsExpertoIngles.ssEnsenarIdioma(oExoBot);
-                oExoBot.ssAprenderIdiomaEspanol();
-                oExoBot.ssAprenderIdiomaIngles();
-                oExoBot.ssAprenderIdiomaIngles();
-                oExoBot.ssMostrarIdiomasAprendidos();
-                System.out.println("\u001B[0m");
+        // Creacion de exobot mediante el codigo de activacion
+        mecatronico.crearExobot(oExoBot);
+        mecatronico.personalizarExobot();
+        exoBot.cpActivarFuentePoder();
+        // SSExpertoEspanol ssExpertoEspanol= new SSExpertoEspanol();
+        // SSExpertoIngles ssExpertoIngles= new SSExpertoIngles();
+        System.out.println(
+                "\u001B[34m"
+                        + "Para un mejor desenvolvimiento en la batalla, el IAbot del exobot aprenderá los idiomas básicos");
+        oSsExpertoEspanol.ssEnsenarIdioma(oExoBot);
+        oSsExpertoIngles.ssEnsenarIdioma(oExoBot);
+        oExoBot.ssAprenderIdiomaEspanol();
+        oExoBot.ssAprenderIdiomaIngles();
+        oExoBot.ssAprenderIdiomaIngles();
+        oExoBot.ssMostrarIdiomasAprendidos();
+        System.out.println("\u001B[0m");
 
                 // Metodos de ExoBot - Isaac Proaño
                 IPpresentarLoading("Creando piernas");
@@ -72,7 +73,10 @@ public class Witherun {
                 exoBot.pjAsignarArma();
                 exoBot.srDispararArmaDerecho();
 
-
-        }
+        // Metodos de fuente de poder
+        exoBot.cpCargarEnergia(100);
+        exoBot.cpConsumirEnergia(50);
+        exoBot.cpDesactivarFuentePoder();
+    }
 
 }

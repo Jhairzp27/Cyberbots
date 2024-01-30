@@ -11,8 +11,16 @@ public class IPExoBot extends PJIABot {
     private APBrazoIzq APBrazoIzq;
     private CPPiernaIzquierda cpPiernaIzquierda;
     private CPPiernaDerecha cpPiernaDerecha;
-    private SRFuenteDePoder fuenteDePoder;
+    private RRFuenteDePoder cpFuenteDePoder;
+    
+    public IPExoBot() {
+        cpFuenteDePoder = new RRFuenteDePoder();
+    }
 
+    public void cpActivarFuentePoder() {
+        cpFuenteDePoder.setRrActiva(true);
+        System.out.println("Fuente de poder activada.");
+    }
     
     public boolean srVerificarConexion() {
         return srConectado = true;
@@ -55,12 +63,28 @@ public class IPExoBot extends PJIABot {
         }
     }
 
-    public SRFuenteDePoder srGetFuenteDePoder() {
-        return fuenteDePoder;
+
+    public void cpDesactivarFuentePoder() {
+        cpFuenteDePoder.setRrActiva(false);
+        System.out.println("Fuente de poder desactivada.");
     }
 
-    public void srIncorporarFuenteDePoder(SRFuenteDePoder fuenteDePoder) {
-        this.fuenteDePoder = fuenteDePoder;
+    public void cpCargarEnergia(int rrCantidad) {
+        if (cpFuenteDePoder.isRrActiva()) {
+            cpFuenteDePoder.setRrNivelEnergia(rrCantidad);
+            System.out.println("Energía cargada. Nivel actual: " + cpFuenteDePoder.getRrNivelEnergia());
+        } else {
+            System.out.println("No se puede cargar energía. La fuente de poder está desactivada.");
+        }
+    }
+
+    public void cpConsumirEnergia(int rrCantidad) {
+        if (cpFuenteDePoder.isRrActiva() && cpFuenteDePoder.getRrNivelEnergia() >= rrCantidad) {
+            cpFuenteDePoder.setRrNivelEnergia(rrCantidad);
+            System.out.println("Energía consumida. Nivel actual: " + cpFuenteDePoder.getRrNivelEnergia());
+        } else {
+            System.out.println("No hay suficiente energía o la fuente de poder está desactivada.");
+        }
     }
 
     @Override
@@ -102,7 +126,7 @@ public class IPExoBot extends PJIABot {
                 System.out.println();
                 APBrazoDer.APIncorporarArma();
                 break;
-            case 2:
+                case 2:
                 pjArmaBrz = "Lanza fuego";
                 APBrazoDer = new APBrazoDer(pjBrazo, pjArmaBrz);
                 System.out.println();
@@ -150,9 +174,8 @@ public class IPExoBot extends PJIABot {
         return "Aprendiendo Ingles";
     }
     /*
-     * Aprender espanol
+    * Aprender espanol
      */
-
     public String ssAprenderIdiomaEspanol() {
         ssListaAprendizajes.put(2, " Espanol");
         return "Aprendiendo Espanol";
