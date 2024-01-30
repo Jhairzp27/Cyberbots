@@ -19,7 +19,7 @@ public class IPExoBot extends PJIABot {
 
     public void cpActivarFuentePoder() {
         cpFuenteDePoder.setRrActiva(true);
-        System.out.println("Fuente de poder activada.");
+        System.out.println(IPColors.ORANGE_BACKGROUND + IPColors.BLACK+ "\t"+ "Fuente de poder activada." + IPColors.RESET);
     }
     
     public boolean srVerificarConexion() {

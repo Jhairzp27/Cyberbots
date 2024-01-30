@@ -31,10 +31,13 @@ public class Witherun {
                 }
         }
 
-        public void ipCrear() {
+        public void ipCrear() throws Exception {
+                Scanner Scanner = new Scanner(System.in);
 
                 System.out.println(color.RED + "\n\n\t\t\t ------- WITHERUN --------- \n\n" + color.RESET + color.GREEN
                                 + ipUbicacion + color.RESET);
+                gzEsperarTecla(Scanner);
+                gzLimpiarConsola();
 
                 // Instancias
                 GZMecatronico mecatronico = new GZMecatronico();
@@ -47,6 +50,8 @@ public class Witherun {
                 mecatronico.crearExobot(oExoBot);
                 mecatronico.personalizarExobot();
                 exoBot.cpActivarFuentePoder();
+                gzEsperarTecla(Scanner);
+                gzLimpiarConsola();
                 // SSExpertoEspanol ssExpertoEspanol= new SSExpertoEspanol();
                 // SSExpertoIngles ssExpertoIngles= new SSExpertoIngles();
                 System.out.println(
@@ -59,6 +64,8 @@ public class Witherun {
                 oExoBot.ssAprenderIdiomaIngles();
                 oExoBot.ssMostrarIdiomasAprendidos();
                 System.out.println("\u001B[0m");
+                gzEsperarTecla(Scanner);
+                gzLimpiarConsola();
 
                 // Metodos de ExoBot - Isaac Proaño
                 IPpresentarLoading("Creando piernas");
@@ -89,19 +96,40 @@ public class Witherun {
                         System.out.println("Decidiste no sacrificar ambas piernas. Continuando...");
                         // Agregar aquí la lógica adicional según la respuesta "no"
                 }
+                gzEsperarTecla(Scanner);
+                gzLimpiarConsola();
+
                 // Metodos de brazos - armas
                 IPpresentarLoading("Creando brazos");
                 System.out.println(" ");
                 exoBot.pjAsignarArma();
                 exoBot.srDispararArmaDerecho();
-                exoBot.srDispararArmaIzq();
-                exoBot.pjSupervisarRecarga();
+                gzEsperarTecla(Scanner);
+                gzLimpiarConsola();
 
                 // Metodos de fuente de poder
-
                 exoBot.cpCargarEnergia(100);
                 exoBot.cpConsumirEnergia(50);
                 exoBot.cpDesactivarFuentePoder();
+        }
+
+        /**
+         * Este metodo limpia la consola luego de utilizar el scanner
+         * @author Jhair Zambrano
+         * @throws Exception
+         */
+        private static void gzLimpiarConsola() throws Exception {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        }
+        
+        /**
+         * Este metodo espera a que escribas para luego darle instrucciones
+         * @author Jhair Zambrano
+         * @param sc
+         */
+        private static void gzEsperarTecla(Scanner sc) {
+                System.out.print(IPColors.CYAN+"\nPresione cualquier tecla para continuar..." + IPColors.RESET);
+                sc.nextLine();
         }
 
 }
