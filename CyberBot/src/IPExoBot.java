@@ -1,12 +1,11 @@
 import java.util.*;
-
 /**
  * @author: Isaac Proaño
  * @date: 27 - 01 - 2023
  * @version: 1.0
  */
-public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngles {
-
+public class IPExoBot extends pjIABot {
+    
     private CPPiernaIzquierda cpPiernaIzquierda;
     private CPPiernaDerecha cpPiernaDerecha;
     private boolean srConectado;
@@ -105,7 +104,7 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
         switch (pjOpcion) {
             case 1:
                 pjArmaBrz = "Metralladora";
-                APBrazoIzq = new APBrazoIzq(pjBrazo, pjArmaBrz);
+                APBrazoIzq = new APBrazoIzq(pjBrazo, pjArmaBrz);    
                 System.out.println();
                 APBrazoIzq.APIncorporarArma();
                 break;
@@ -171,5 +170,9 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
             System.out.print(v + " , ");
         });
         System.out.println();
+    }
+
+    public void pjAsignarArma() {
+        super.pjAsignarArma();
     }
 }

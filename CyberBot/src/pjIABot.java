@@ -1,6 +1,4 @@
-import java.util.Hashtable;
 import java.util.InputMismatchException;
-import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
