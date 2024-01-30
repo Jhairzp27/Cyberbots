@@ -37,6 +37,17 @@ public class Witherun {
         mecatronico.crearExobot(oExoBot);
         mecatronico.personalizarExobot();
 
+        // Metodos de ExoBot - Isaac Proaño
+
+        IPExoBot exoBot = new IPExoBot();
+        exoBot.IPConectarPiernas(new CPPiernaIzquierda(), new CPPiernaDerecha());
+        exoBot.IPCorrer();
+        exoBot.IPSaltar();
+        exoBot.IPSacrificarPiernaIzquierda();
+        exoBot.IPSacrificarPiernaDerecha();
+
+
+
     }
 
 }

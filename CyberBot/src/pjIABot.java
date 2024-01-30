@@ -2,13 +2,13 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-public abstract class pjIABot {
+public abstract class PJIABot {
     static Scanner sc = new Scanner(System.in);
     String pjCodigoActivacion;
     String pjSerieExoBot;
 
     /* Constructor de la clase */
-    public pjIABot() {
+    public PJIABot() {
         this.pjCodigoActivacion = pjGenerarCodigoActivacion();
         this.pjSerieExoBot = pjAsignarSerie();
     }

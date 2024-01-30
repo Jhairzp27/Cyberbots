@@ -1,10 +1,11 @@
-import java.util.*;
+import java.util.Hashtable;
+import java.util.Scanner;
 /**
  * @author: Isaac Proaño
  * @date: 27 - 01 - 2023
  * @version: 1.0
  */
-public class IPExoBot extends pjIABot {
+public class IPExoBot extends PJIABot {
     private boolean srConectado;
     private APBrazoDer APBrazoDer;
     private APBrazoIzq APBrazoIzq;
@@ -110,31 +111,31 @@ public class IPExoBot extends pjIABot {
             }
     }
     
-    public void cpConectarPiernas(CPPiernaIzquierda cpPiernaIzq, CPPiernaDerecha cpPiernaDer) {
+    public void IPConectarPiernas(CPPiernaIzquierda cpPiernaIzq, CPPiernaDerecha cpPiernaDer) {
         cpPiernaIzquierda = cpPiernaIzq;
         cpPiernaDerecha = cpPiernaDer;
     }
 
-    public void cpCorrer() {
+    public void IPCorrer() {
         if (cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
             System.out.println("ExoBot corriendo a: " + cpPiernaIzquierda.getCpVelocidadMaxima());
         else
             System.out.println("< Error! > [ No se puede correr ya que una o ambas extremidades inferiores fueron desacopladas ]");
     }
 
-    public void cpSaltar() {
+    public void IPSaltar() {
         if (cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
             System.out.println("ExoBot saltando " + cpPiernaIzquierda.getCpSaltoMaximo());
         else
             System.out.println("< Error! > [ No se puede saltar ya que una o ambas extremidades inferiores fueron desacopladas ]");
     }
 
-    public void cpSacrificarPiernaIzquierda() {
+    public void IPSacrificarPiernaIzquierda() {
         cpPiernaIzquierda.cpSacrificar();
         System.out.println("La pierna " + cpPiernaIzquierda.getCpLado() + " ha sido descoplada con exito");
     }
 
-    public void cpSacrificarPiernaDerecha() {
+    public void IPSacrificarPiernaDerecha() {
         cpPiernaDerecha.cpSacrificar();
         System.out.println("La pierna " + cpPiernaDerecha.getCpLado() + " ha sido desacoplada con exito!");
     }
