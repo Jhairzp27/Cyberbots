@@ -12,7 +12,7 @@ public class SSExpertoEspanol extends SSExperto {
     }
 
     public void ssEnsenarIdioma(SSIAlumnoEspanol ssAlumnoEspanol) {
-        System.out.println(ssAlumnoEspanol.ssAprenderIdiomaEspanol() + "de el maestro " + getSsNombreExpertoEspanol());
+        System.out.println(ssAlumnoEspanol.ssAprenderIdiomaEspanol() + " de el maestro " + getSsNombreExpertoEspanol());
     }
 
 }
