@@ -79,7 +79,7 @@ public class IPExoBot extends pjIABot {
         }
     }
 
-     public SRFuenteDePoder srGetFuenteDePoder() {
+    public SRFuenteDePoder srGetFuenteDePoder() {
         return fuenteDePoder;
     }
     public void srIncorporarFuenteDePoder(SRFuenteDePoder fuenteDePoder) {
@@ -89,9 +89,9 @@ public class IPExoBot extends pjIABot {
     public void pjAsignarArmaBrazoIzquierdo() {
         String pjArmaBrz = "";
         String pjBrazo = "Izquierdo";
-        System.out.println("¿Qué armas desea utilizar en el brazo izquierdo?");
-        System.out.println("1. Metralladora (MK61)");
-        System.out.println("2. Bazuca antitanque");
+        System.out.println("\n\t¿Qué arma desea utilizar en el brazo izquierdo?");
+        System.out.println("\n1. Metralladora (MK61)");
+        System.out.println("2. Bazuca antitanque\n");
         int pjOpcion = pjValidarEntradaNumerica(1, 2);
         switch (pjOpcion) {
             case 1: 
@@ -110,8 +110,25 @@ public class IPExoBot extends pjIABot {
     }
     @Override
     public void pjAsignarArmaBrazoDerecho() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pjAsignarArmaBrazoDerecho'");
+        String pjArmaBrz = "";
+        String pjBrazo = "Derecho";
+        System.out.println("\n\t¿Qué arma desea utilizar en el brazo derecho?");
+        System.out.println("\n1. Arma Laser");
+        System.out.println("2. Lanza Fuego\n");
+        int pjOpcion = pjValidarEntradaNumerica(1, 2);
+        switch (pjOpcion) {
+            case 1: 
+                pjArmaBrz = "Arma laser";
+                APBrazoDer = new APBrazoDer(pjBrazo, pjArmaBrz);
+                System.out.println();
+                APBrazoDer.APIncorporarArma();
+                break;
+            case 2:
+                pjArmaBrz = "Lanza fuego";
+                APBrazoDer = new APBrazoDer(pjBrazo, pjArmaBrz);
+                System.out.println();
+                APBrazoDer.APIncorporarArma();
+                break;
+        }
     }
-
 }
