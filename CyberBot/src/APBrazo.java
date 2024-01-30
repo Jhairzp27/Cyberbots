@@ -22,6 +22,6 @@ public class APBrazo {
     }
 
     public void APIncorporarArma(){
-        System.out.println("Incorporando" + apArma + "al brazo" + apBrazo);
+        System.out.println("Incorporando " + apArma + " al brazo " + apBrazo);
     }
 }

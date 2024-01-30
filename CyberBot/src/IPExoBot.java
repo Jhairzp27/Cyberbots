@@ -4,7 +4,7 @@ import java.util.*;
  *  @date: 27 - 01 - 2023
  *  @version: 1.0
  */
-public class IPExoBot {
+public class IPExoBot extends pjIABot {
     
     private CPPiernaIzquierda cpPiernaIzquierda;
     private CPPiernaDerecha cpPiernaDerecha;
@@ -79,11 +79,56 @@ public class IPExoBot {
         }
     }
 
-     public SRFuenteDePoder srGetFuenteDePoder() {
+    public SRFuenteDePoder srGetFuenteDePoder() {
         return fuenteDePoder;
     }
     public void srIncorporarFuenteDePoder(SRFuenteDePoder fuenteDePoder) {
         this.fuenteDePoder = fuenteDePoder;
     }
-
+    @Override
+    public void pjAsignarArmaBrazoIzquierdo() {
+        String pjArmaBrz = "";
+        String pjBrazo = "Izquierdo";
+        System.out.println("\n\t¿Qué arma desea utilizar en el brazo izquierdo?");
+        System.out.println("\n1. Metralladora (MK61)");
+        System.out.println("2. Bazuca antitanque\n");
+        int pjOpcion = pjValidarEntradaNumerica(1, 2);
+        switch (pjOpcion) {
+            case 1: 
+                pjArmaBrz = "Metralladora";
+                APBrazoIzq = new APBrazoIzq(pjBrazo, pjArmaBrz);
+                System.out.println();
+                APBrazoIzq.APIncorporarArma();
+                break;
+            case 2:
+                pjArmaBrz = "Bazuca";
+                APBrazoIzq = new APBrazoIzq(pjBrazo, pjArmaBrz);
+                System.out.println();
+                APBrazoIzq.APIncorporarArma();
+                break;
+        }
+    }
+    @Override
+    public void pjAsignarArmaBrazoDerecho() {
+        String pjArmaBrz = "";
+        String pjBrazo = "Derecho";
+        System.out.println("\n\t¿Qué arma desea utilizar en el brazo derecho?");
+        System.out.println("\n1. Arma Laser");
+        System.out.println("2. Lanza Fuego\n");
+        int pjOpcion = pjValidarEntradaNumerica(1, 2);
+        switch (pjOpcion) {
+            case 1: 
+                pjArmaBrz = "Arma laser";
+                APBrazoDer = new APBrazoDer(pjBrazo, pjArmaBrz);
+                System.out.println();
+                APBrazoDer.APIncorporarArma();
+                break;
+            case 2:
+                pjArmaBrz = "Lanza fuego";
+                APBrazoDer = new APBrazoDer(pjBrazo, pjArmaBrz);
+                System.out.println();
+                APBrazoDer.APIncorporarArma();
+                break;
+        }
+    }
 }
