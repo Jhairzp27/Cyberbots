@@ -40,19 +40,15 @@ public class Witherun {
         System.out.println("\u001B[0m");
 
         // Metodos de ExoBot - Isaac Proaño
-<<<<<<< HEAD
-
-        IPExoBot exoBot = new IPExoBot();
-        // Metodos de las piernas
-=======
->>>>>>> 9a5a61c24e9a7f91f36c0cffa3d241a4825721eb
         exoBot.IPConectarPiernas(new CPPiernaIzquierda(), new CPPiernaDerecha());
         exoBot.IPCorrer();
         exoBot.IPSaltar();
         exoBot.IPSacrificarPiernaIzquierda();
         exoBot.IPSacrificarPiernaDerecha();
-        // Metodos de las armas
 
+        // Metodos de brazos - armas
+        exoBot.pjAsignarArma();
+        exoBot.srDispararArmaDerecho();
 
 
 
