@@ -1,10 +1,8 @@
-import java.util.Hashtable;
 import java.util.InputMismatchException;
-import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-public abstract class pjIABot {
+public abstract class PJIABot {
     static Scanner sc = new Scanner(System.in);
     String pjCodigoActivacion;
     String pjSerieExoBot;
