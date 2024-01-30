@@ -36,6 +36,7 @@ public class Witherun {
         oExoBot.ssAprenderIdiomaIngles();
         oExoBot.ssMostrarIdiomasAprendidos();
         System.out.println("\u001B[0m");
+        mecatronico.crearExobot(oExoBot);
 
     }
 

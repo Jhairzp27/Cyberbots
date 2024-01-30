@@ -146,7 +146,6 @@ public class IPExoBot extends pjIABot {
     /*
      * Aprender ingles
      */
-    @Override
     public String ssAprenderIdiomaIngles() {
         ssListaAprendizajes.put(1, " Ingles");
         return "Aprendiendo Ingles";
@@ -155,7 +154,6 @@ public class IPExoBot extends pjIABot {
      * Aprender espanol
      */
 
-    @Override
     public String ssAprenderIdiomaEspanol() {
         ssListaAprendizajes.put(2, " Espanol");
         return "Aprendiendo Espanol";
