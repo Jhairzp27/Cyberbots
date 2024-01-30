@@ -17,6 +17,15 @@ public class Witherun {
         System.out.println(color.RED +"\n\n\t\t\t ------- WITHERUN --------- \n\n" + color.RESET + color.GREEN + ipUbicacion + color.RESET);
         
         GZMecatronico mecatronico = new GZMecatronico();
+        IPExoBot exoBot = new IPExoBot();
+        exoBot.cpConectarPiernas(new CPPiernaIzquierda(), new CPPiernaDerecha());
+        exoBot.cpCorrer();
+        exoBot.cpSaltar();
+        exoBot.cpSacrificarPiernaIzquierda();
+        exoBot.cpSacrificarPiernaIzquierda();
+        exoBot.srVerificarConexion();
+        exoBot.srDispararArmaDerecho();
+        
         // mecatronico.gzRealizarActividad();
     }
 

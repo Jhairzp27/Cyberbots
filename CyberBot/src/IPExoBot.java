@@ -1,10 +1,10 @@
-import java.util.*;
+import java.util.Scanner;
 /**
  *  @author: Isaac Proaño
  *  @date: 27 - 01 - 2023
  *  @version: 1.0
  */
-public class IPExoBot extends pjIABot {
+public class IPExoBot extends PJIABot {
     
     private CPPiernaIzquierda cpPiernaIzquierda;
     private CPPiernaDerecha cpPiernaDerecha;
@@ -96,7 +96,7 @@ public class IPExoBot extends pjIABot {
         switch (pjOpcion) {
             case 1: 
                 pjArmaBrz = "Metralladora";
-                APBrazoIzq = new APBrazoIzq(pjBrazo, pjArmaBrz);
+                APBrazoIzq = new APBrazoIzq(pjBrazo, pjArmaBrz);    
                 System.out.println();
                 APBrazoIzq.APIncorporarArma();
                 break;
