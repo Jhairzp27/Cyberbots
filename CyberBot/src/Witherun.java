@@ -26,6 +26,7 @@ public class Witherun {
         // Creacion de exobot mediante el codigo de activacion
         mecatronico.crearExobot(oExoBot);
         mecatronico.personalizarExobot();
+        exoBot.cpActivarFuentePoder();
         // SSExpertoEspanol ssExpertoEspanol= new SSExpertoEspanol();
         // SSExpertoIngles ssExpertoIngles= new SSExpertoIngles();
         System.out.println(
@@ -50,8 +51,10 @@ public class Witherun {
         exoBot.pjAsignarArma();
         exoBot.srDispararArmaDerecho();
 
-
-
+        // Metodos de fuente de poder
+        exoBot.cpCargarEnergia(100);
+        exoBot.cpConsumirEnergia(50);
+        exoBot.cpDesactivarFuentePoder();
     }
 
 }

@@ -39,11 +39,4 @@ public class SRSoldado extends GZPersona {
         }
     }
  }
-    public void srRecargarReemplazarFuentePoder(){
-        if (exobot != null && exobot.srGetFuenteDePoder() != null) {
-            System.out.println("Recargando o reemplazando la fuente de poder del ExoBot");
-        } else {
-            System.out.println("< Error! > [ El ExoBot no tiene una fuente de poder incorporada ]");
-        }
-    }
 }
