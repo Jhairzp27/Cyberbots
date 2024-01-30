@@ -11,6 +11,6 @@ public class SSExpertoIngles extends SSExperto {
     }
 
     public void ssEnsenarIdioma(SSIAlumnoIngles ssAlumnoIngles) {
-        System.out.println(ssAlumnoIngles.ssAprenderIdiomaIngles() + "de el maestro " + getSsNombreExpertoIngles());
+        System.out.println(ssAlumnoIngles.ssAprenderIdiomaIngles() + " de el maestro " + getSsNombreExpertoIngles());
     }
 }
