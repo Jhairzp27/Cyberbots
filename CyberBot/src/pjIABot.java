@@ -1,4 +1,6 @@
+import java.util.Hashtable;
 import java.util.InputMismatchException;
+import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -71,6 +73,7 @@ public abstract class pjIABot {
         int pjCodigoGenerado = 1000 + random.nextInt(9000); // Genera números aleatorios entre 1000 a 9999
         return "Código de Activación: " + pjCodigoGenerado;
     }
+
     /*
      * Obtener código de Activación del ExoBot
      */
@@ -98,4 +101,5 @@ public abstract class pjIABot {
     public void pjSupervisarRecarga() {
         System.out.println("Supervisando recarga del ExoBot");
     }
+
 }
