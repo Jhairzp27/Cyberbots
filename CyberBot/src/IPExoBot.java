@@ -26,43 +26,7 @@ public class IPExoBot extends PJIABot {
         return srConectado = true;
     }
 
-    public void srDispararArmaDerecho() {
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            try {
-                System.out.println("Seleccione el arma a disparar: ");
-                String srArma = scanner.nextLine();
-                APBrazoDer = new APBrazoDer("Derecho", srArma);
-                APBrazoDer.APIncorporarArma();
-                System.out.println("Disparando el arma " + srArma);
-                break;
-            } catch (IllegalArgumentException e) {
-                System.out.println("Error! Seleccione un arma válido");
-            } catch (Exception e) {
-                System.out.println("Error general: " + e.getMessage());
-            }
-        }
-    }
-
-    public void srDispararArmaIzq() {
-        Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            try {
-                System.out.println("Seleccione el arma a disparar: ");
-                String srArma = scanner.nextLine();
-                APBrazoIzq = new APBrazoIzq("Izquierdo", srArma);
-                APBrazoIzq.APIncorporarArma();
-                System.out.println("Disparando el arma " + srArma);
-                break;
-            } catch (IllegalArgumentException e) {
-                System.out.println("Error! Seleccione un arma válida");
-            } catch (Exception e) {
-                System.out.println("Error general: " + e.getMessage());
-            }
-        }
-    }
-
+    
 
     public void cpDesactivarFuentePoder() {
         cpFuenteDePoder.setRrActiva(false);
@@ -134,6 +98,38 @@ public class IPExoBot extends PJIABot {
                 break;
             }
     }
+
+    public void dispararArma() {
+        Scanner scanner = new Scanner(System.in);
+    
+        while (true) {
+            System.out.println("Seleccione el brazo para disparar ('Derecho' o 'Izquierdo'), o 'salir' para detenerse: ");
+            String seleccionBrazo = scanner.nextLine();
+    
+            if ("salir".equalsIgnoreCase(seleccionBrazo)) {
+                break; // Sale del bucle si el usuario ingresa 'salir'
+            }
+    
+            if ("Derecho".equalsIgnoreCase(seleccionBrazo)) {
+                if (APBrazoDer != null) {
+                    APBrazoDer.disparar();
+                } else {
+                    System.out.println("Error! No hay un arma en el brazo derecho incorporado.");
+                }
+            } else if ("Izquierdo".equalsIgnoreCase(seleccionBrazo)) {
+                if (APBrazoIzq != null) {
+                    APBrazoIzq.disparar();
+                } else {
+                    System.out.println("Error! No hay un arma en el brazo izquierdo incorporado.");
+                }
+            } else {
+                System.out.println("< Error! > [ Selección de brazo no válida ]");
+            }
+        }
+    }
+    
+    
+
     
     public void IPConectarPiernas(CPPiernaIzquierda cpPiernaIzq, CPPiernaDerecha cpPiernaDer) {
         cpPiernaIzquierda = cpPiernaIzq;

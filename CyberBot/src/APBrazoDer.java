@@ -4,5 +4,8 @@ public class APBrazoDer extends APBrazo {
         super(brazo, arma);
         //TODO Auto-generated constructor stub
     }
+    public void disparar() {
+        System.out.println("Disparando el arma del brazo derecho");
+    }
 
 }
