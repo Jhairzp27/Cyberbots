@@ -4,7 +4,7 @@
  *  @version: 1.0
  */
 
-public abstract class CPPierna {
+public class CPPierna {
     private String cpLado;
     private String cpVelocidadMaxima;
     private String cpSaltoMaximo;

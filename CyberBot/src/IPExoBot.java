@@ -6,45 +6,14 @@ import java.util.*;
  * @version: 1.0
  */
 public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngles {
-
-    private CPPiernaIzquierda cpPiernaIzquierda;
-    private CPPiernaDerecha cpPiernaDerecha;
     private boolean srConectado;
     private APBrazoDer APBrazoDer;
     private APBrazoIzq APBrazoIzq;
+    private CPPiernaIzquierda cpPiernaIzquierda;
+    private CPPiernaDerecha cpPiernaDerecha;
     private SRFuenteDePoder fuenteDePoder;
 
-    public void cpConectarPiernas(CPPiernaIzquierda cpPiernaIzq, CPPiernaDerecha cpPiernaDer) {
-        cpPiernaIzquierda = cpPiernaIzq;
-        cpPiernaDerecha = cpPiernaDer;
-    }
-
-    public void cpCorrer() {
-        if (cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
-            System.out.println("ExoBot corriendo a: " + cpPiernaIzquierda.getCpVelocidadMaxima());
-        else
-            System.out.println(
-                    "< Error! > [ No se puede correr ya que una o ambas extremidades inferiores fueron desacopladas ]");
-    }
-
-    public void cpSaltar() {
-        if (cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
-            System.out.println("ExoBot saltando " + cpPiernaIzquierda.getCpSaltoMaximo());
-        else
-            System.out.println(
-                    "< Error! > [ No se puede saltar ya que una o ambas extremidades inferiores fueron desacopladas ]");
-    }
-
-    public void cpSacrificarPiernaIzquierda() {
-        cpPiernaIzquierda.cpSacrificar();
-        System.out.println("La pierna " + cpPiernaIzquierda.getCpLado() + "Ha sido descoplada con exito");
-    }
-
-    public void cpSacrificarPiernaDerecha() {
-        cpPiernaDerecha.cpSacrificar();
-        System.out.println("La pierna " + cpPiernaDerecha.getCpLado() + "Ha sido desacoplada con exito!");
-    }
-
+    
     public boolean srVerificarConexion() {
         return srConectado = true;
     }
@@ -133,15 +102,44 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
                 System.out.println();
                 APBrazoDer.APIncorporarArma();
                 break;
-            case 2:
+                case 2:
                 pjArmaBrz = "Lanza fuego";
                 APBrazoDer = new APBrazoDer(pjBrazo, pjArmaBrz);
                 System.out.println();
                 APBrazoDer.APIncorporarArma();
                 break;
+            }
         }
-    }
-
+        
+        public void cpConectarPiernas(CPPiernaIzquierda cpPiernaIzq, CPPiernaDerecha cpPiernaDer) {
+            cpPiernaIzquierda = cpPiernaIzq;
+            cpPiernaDerecha = cpPiernaDer;
+        }
+    
+        public void cpCorrer() {
+            if (cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
+                System.out.println("ExoBot corriendo a: " + cpPiernaIzquierda.getCpVelocidadMaxima());
+            else
+                System.out.println("< Error! > [ No se puede correr ya que una o ambas extremidades inferiores fueron desacopladas ]");
+        }
+    
+        public void cpSaltar() {
+            if (cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
+                System.out.println("ExoBot saltando " + cpPiernaIzquierda.getCpSaltoMaximo());
+            else
+                System.out.println("< Error! > [ No se puede saltar ya que una o ambas extremidades inferiores fueron desacopladas ]");
+        }
+    
+        public void cpSacrificarPiernaIzquierda() {
+            cpPiernaIzquierda.cpSacrificar();
+            System.out.println("La pierna " + cpPiernaIzquierda.getCpLado() + " ha sido descoplada con exito");
+        }
+    
+        public void cpSacrificarPiernaDerecha() {
+            cpPiernaDerecha.cpSacrificar();
+            System.out.println("La pierna " + cpPiernaDerecha.getCpLado() + " ha sido desacoplada con exito!");
+        }
+        
     Hashtable<Integer, String> ssListaAprendizajes = new Hashtable<>();
 
     /*
@@ -153,9 +151,9 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
         return "Aprendiendo Ingles";
     }
     /*
-     * Aprender espanol
+    * Aprender espanol
      */
-
+    
     @Override
     public String ssAprenderIdiomaEspanol() {
         ssListaAprendizajes.put(2, " Espanol");
