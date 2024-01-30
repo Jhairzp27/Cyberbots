@@ -77,12 +77,12 @@ public class Witherun {
 
                 System.out.println("¿Quieres sacrificar ambas piernas para volar con el exobot? (si/no)");
 
-                // Obtener la respuesta del usuario
+                // Obtener respuesta
                 String respuesta = scanner.nextLine().toLowerCase();
 
                 // Validar la respuesta
                 while (!respuesta.equals("si") && !respuesta.equals("no")) {
-                        System.out.println("Respuesta no válida. Por favor, ingresa 'sí' o 'no'.");
+                        System.out.println("Respuesta no válida. Por favor, ingresa 'si' o 'no'.");
                         respuesta = scanner.nextLine().toLowerCase();
                 }
 
@@ -91,21 +91,19 @@ public class Witherun {
                         System.out.println("Sacrificando ambas piernas para volar con el exobot...");
                         exoBot.IPSacrificarPiernaIzquierda();
                         exoBot.IPSacrificarPiernaDerecha();
-                        // Agregar aquí la lógica adicional según la respuesta "sí"
                 } else {
                         System.out.println("Decidiste no sacrificar ambas piernas. Continuando...");
-                        // Agregar aquí la lógica adicional según la respuesta "no"
                 }
                 gzEsperarTecla(Scanner);
                 gzLimpiarConsola();
 
                 // Metodos de brazos - armas
-                IPpresentarLoading("Creando brazos");
-                System.out.println(" ");
-                exoBot.pjAsignarArma();
-                exoBot.srDispararArmaDerecho();
-                gzEsperarTecla(Scanner);
-                gzLimpiarConsola();
+                // IPpresentarLoading("Creando brazos");
+                // System.out.println(" ");
+                // exoBot.pjAsignarArma();
+                // exoBot.srDispararArmaDerecho();
+                // gzEsperarTecla(Scanner);
+                // gzLimpiarConsola();
 
                 // Metodos de fuente de poder
                 exoBot.cpCargarEnergia(100);
