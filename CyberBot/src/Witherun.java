@@ -103,7 +103,7 @@ public class Witherun {
                 IPpresentarLoading("Creando brazos");
                 System.out.println(" ");
                 exoBot.pjAsignarArma();
-                exoBot.srDispararArmaDerecho();
+                exoBot.dispararArma();
                 gzEsperarTecla(Scanner);
                 gzLimpiarConsola();
 
