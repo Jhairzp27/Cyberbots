@@ -18,8 +18,6 @@ public class Witherun {
 
         GZMecatronico mecatronico = new GZMecatronico();
 
-        mecatronico.crearExobot();
-        mecatronico.personalizarExobot();
         
         // SSExpertoEspanol ssExpertoEspanol= new SSExpertoEspanol();
         // SSExpertoIngles ssExpertoIngles= new SSExpertoIngles();
@@ -37,6 +35,7 @@ public class Witherun {
         oExoBot.ssMostrarIdiomasAprendidos();
         System.out.println("\u001B[0m");
         mecatronico.crearExobot(oExoBot);
+        mecatronico.personalizarExobot();
 
     }
 
