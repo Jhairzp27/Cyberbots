@@ -9,7 +9,7 @@
  import java.util.ArrayList;
 
 public abstract class RRArma {
-    private ArrayList<String> rrListaArmas;
+    private ArrayList<String> rrListaArmas = new ArrayList<>(4);
 
     // Constructor que inicializa la lista de armas
     public RRArma() {
@@ -23,11 +23,6 @@ public abstract class RRArma {
         rrListaArmas.add("Bazuca");
         rrListaArmas.add("Arma laser");
         rrListaArmas.add("Lanza fuego");
-    }
-
-    // Método para agregar armas directamente desde la clase
-    public void rrAgregarArma(String arma) {
-        rrListaArmas.add(arma);
     }
 
     // Método para obtener la lista de armas
