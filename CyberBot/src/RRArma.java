@@ -6,45 +6,27 @@
  * @version: 1.0
  */
 
+ import java.util.ArrayList;
+
 public abstract class RRArma {
-    private boolean rrEncendida;
-    private boolean rrConMuniciones;
+    private ArrayList<String> rrListaArmas = new ArrayList<>(4);
 
-    public RRArma () {
-        this.rrEncendida = false;
-        this.rrConMuniciones = false;
+    // Constructor que inicializa la lista de armas
+    public RRArma() {
+        rrListaArmas = new ArrayList<>();
+        rrAsignarArmas();
     }
 
-    public boolean rrEstaEncendida() {
-        return rrEncendida;
+    // Método para asignar un conjunto predeterminado de armas
+    public void rrAsignarArmas() {
+        rrListaArmas.add("Metralladora");
+        rrListaArmas.add("Bazuca");
+        rrListaArmas.add("Arma laser");
+        rrListaArmas.add("Lanza fuego");
     }
 
-    public boolean rrTieneMuniciones() {
-        return rrConMuniciones;
+    // Método para obtener la lista de armas
+    public ArrayList<String> rrGetListaArmas() {
+        return rrListaArmas;
     }
-
-    // Métodos abstractos a ser implementados por las clases hijas
-    public abstract void rrDisparar();
-
-    // Métodos comunes para todas las armas
-    public void rrEncender() {
-        rrEncendida = true;
-        System.out.println("El arma está encendida.");
-    }
-
-    public void rrApagar() {
-        rrEncendida = false;
-        System.out.println("El arma está apagada.");
-    }
-
-    public void rrCargar() {
-        rrConMuniciones = true;
-        System.out.println("El arma está cargada con municiones.");
-    }
-
-    public void rrDescargar() {
-        rrConMuniciones = false;
-        System.out.println("El arma no tiene municiones.");
-    }
-
 }

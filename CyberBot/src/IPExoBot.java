@@ -1,22 +1,27 @@
-import java.util.*;
-
+import java.util.Hashtable;
+import java.util.Scanner;
 /**
  * @author: Isaac Proaño
  * @date: 27 - 01 - 2023
- * @version: 1.0
+ * @version: 2.0
  */
-public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngles {
+public class IPExoBot extends PJIABot {
     private boolean srConectado;
     private APBrazoDer APBrazoDer;
     private APBrazoIzq APBrazoIzq;
     private CPPiernaIzquierda cpPiernaIzquierda;
     private CPPiernaDerecha cpPiernaDerecha;
     private RRFuenteDePoder cpFuenteDePoder;
-
+    
     public IPExoBot() {
         cpFuenteDePoder = new RRFuenteDePoder();
     }
 
+    public void cpActivarFuentePoder() {
+        cpFuenteDePoder.setRrActiva(true);
+        System.out.println("Fuente de poder activada.");
+    }
+    
     public boolean srVerificarConexion() {
         return srConectado = true;
     }
@@ -58,17 +63,13 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
         }
     }
 
-    public void cpActivarFuentePoder() {
-        cpFuenteDePoder.setRrActiva(true);
-        System.out.println("Fuente de poder activada.");
-    }
 
     public void cpDesactivarFuentePoder() {
         cpFuenteDePoder.setRrActiva(false);
         System.out.println("Fuente de poder desactivada.");
     }
 
-    public void rrCargarEnergia(int rrCantidad) {
+    public void cpCargarEnergia(int rrCantidad) {
         if (cpFuenteDePoder.isRrActiva()) {
             cpFuenteDePoder.setRrNivelEnergia(rrCantidad);
             System.out.println("Energía cargada. Nivel actual: " + cpFuenteDePoder.getRrNivelEnergia());
@@ -77,7 +78,7 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
         }
     }
 
-    public void consumirEnergia(int rrCantidad) {
+    public void cpConsumirEnergia(int rrCantidad) {
         if (cpFuenteDePoder.isRrActiva() && cpFuenteDePoder.getRrNivelEnergia() >= rrCantidad) {
             cpFuenteDePoder.setRrNivelEnergia(rrCantidad);
             System.out.println("Energía consumida. Nivel actual: " + cpFuenteDePoder.getRrNivelEnergia());
@@ -97,7 +98,7 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
         switch (pjOpcion) {
             case 1:
                 pjArmaBrz = "Metralladora";
-                APBrazoIzq = new APBrazoIzq(pjBrazo, pjArmaBrz);
+                APBrazoIzq = new APBrazoIzq(pjBrazo, pjArmaBrz);    
                 System.out.println();
                 APBrazoIzq.APIncorporarArma();
                 break;
@@ -132,43 +133,42 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
                 APBrazoDer.APIncorporarArma();
                 break;
             }
-        }
-        
-        public void cpConectarPiernas(CPPiernaIzquierda cpPiernaIzq, CPPiernaDerecha cpPiernaDer) {
-            cpPiernaIzquierda = cpPiernaIzq;
-            cpPiernaDerecha = cpPiernaDer;
-        }
+    }
     
-        public void cpCorrer() {
-            if (cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
-                System.out.println("ExoBot corriendo a: " + cpPiernaIzquierda.getCpVelocidadMaxima());
-            else
-                System.out.println("< Error! > [ No se puede correr ya que una o ambas extremidades inferiores fueron desacopladas ]");
-        }
-    
-        public void cpSaltar() {
-            if (cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
-                System.out.println("ExoBot saltando " + cpPiernaIzquierda.getCpSaltoMaximo());
-            else
-                System.out.println("< Error! > [ No se puede saltar ya que una o ambas extremidades inferiores fueron desacopladas ]");
-        }
-    
-        public void cpSacrificarPiernaIzquierda() {
-            cpPiernaIzquierda.cpSacrificar();
-            System.out.println("La pierna " + cpPiernaIzquierda.getCpLado() + " ha sido descoplada con exito");
-        }
-    
-        public void cpSacrificarPiernaDerecha() {
-            cpPiernaDerecha.cpSacrificar();
-            System.out.println("La pierna " + cpPiernaDerecha.getCpLado() + " ha sido desacoplada con exito!");
-        }
-        
+    public void IPConectarPiernas(CPPiernaIzquierda cpPiernaIzq, CPPiernaDerecha cpPiernaDer) {
+        cpPiernaIzquierda = cpPiernaIzq;
+        cpPiernaDerecha = cpPiernaDer;
+    }
+
+    public void IPCorrer() {
+        if (cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
+            System.out.println("ExoBot corriendo a: " + cpPiernaIzquierda.getCpVelocidadMaxima());
+        else
+            System.out.println("< Error! > [ No se puede correr ya que una o ambas extremidades inferiores fueron desacopladas ]");
+    }
+
+    public void IPSaltar() {
+        if (cpPiernaIzquierda.cpVerificarConexion() && cpPiernaDerecha.cpVerificarConexion())
+            System.out.println("ExoBot saltando " + cpPiernaIzquierda.getCpSaltoMaximo());
+        else
+            System.out.println("< Error! > [ No se puede saltar ya que una o ambas extremidades inferiores fueron desacopladas ]");
+    }
+
+    public void IPSacrificarPiernaIzquierda() {
+        cpPiernaIzquierda.cpSacrificar();
+        System.out.println("La pierna " + cpPiernaIzquierda.getCpLado() + " ha sido descoplada con exito");
+    }
+
+    public void IPSacrificarPiernaDerecha() {
+        cpPiernaDerecha.cpSacrificar();
+        System.out.println("La pierna " + cpPiernaDerecha.getCpLado() + " ha sido desacoplada con exito!");
+    }
+
     Hashtable<Integer, String> ssListaAprendizajes = new Hashtable<>();
 
     /*
      * Aprender ingles
      */
-    @Override
     public String ssAprenderIdiomaIngles() {
         ssListaAprendizajes.put(1, " Ingles");
         return "Aprendiendo Ingles";
@@ -176,8 +176,6 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
     /*
     * Aprender espanol
      */
-    
-    @Override
     public String ssAprenderIdiomaEspanol() {
         ssListaAprendizajes.put(2, " Espanol");
         return "Aprendiendo Espanol";
@@ -192,5 +190,9 @@ public class IPExoBot extends pjIABot implements SSIAlumnoEspanol, SSIAlumnoIngl
             System.out.print(v + " , ");
         });
         System.out.println();
+    }
+
+    public void pjAsignarArma() {
+        super.pjAsignarArma();
     }
 }
