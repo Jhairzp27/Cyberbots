@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * @author: Isaac Proaño
  * @date: 27 - 01 - 2023
- * @version: 1.0
+ * @version: 2.0
  */
 public class IPExoBot extends PJIABot {
     private boolean srConectado;
