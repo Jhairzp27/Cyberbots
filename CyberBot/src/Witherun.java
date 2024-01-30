@@ -16,17 +16,21 @@ public class Witherun {
         System.out.println(color.RED + "\n\n\t\t\t ------- WITHERUN --------- \n\n" + color.RESET + color.GREEN
                 + ipUbicacion + color.RESET);
 
+        // Instancias
         GZMecatronico mecatronico = new GZMecatronico();
+        IPExoBot oExoBot = new IPExoBot();
+        SSExpertoEspanol oSsExpertoEspanol = new SSExpertoEspanol();
+        SSExpertoIngles oSsExpertoIngles = new SSExpertoIngles();
+        IPExoBot exoBot = new IPExoBot();
 
-        
+        // Creacion de exobot mediante el codigo de activacion
+        mecatronico.crearExobot(oExoBot);
+        mecatronico.personalizarExobot();
         // SSExpertoEspanol ssExpertoEspanol= new SSExpertoEspanol();
         // SSExpertoIngles ssExpertoIngles= new SSExpertoIngles();
         System.out.println(
                 "\u001B[34m"
                         + "Para un mejor desenvolvimiento en la batalla, el IAbot del exobot aprenderá los idiomas básicos");
-        IPExoBot oExoBot = new IPExoBot();
-        SSExpertoEspanol oSsExpertoEspanol = new SSExpertoEspanol();
-        SSExpertoIngles oSsExpertoIngles = new SSExpertoIngles();
         oSsExpertoEspanol.ssEnsenarIdioma(oExoBot);
         oSsExpertoIngles.ssEnsenarIdioma(oExoBot);
         oExoBot.ssAprenderIdiomaEspanol();
@@ -34,13 +38,14 @@ public class Witherun {
         oExoBot.ssAprenderIdiomaIngles();
         oExoBot.ssMostrarIdiomasAprendidos();
         System.out.println("\u001B[0m");
-        mecatronico.crearExobot(oExoBot);
-        mecatronico.personalizarExobot();
 
         // Metodos de ExoBot - Isaac Proaño
+<<<<<<< HEAD
 
         IPExoBot exoBot = new IPExoBot();
         // Metodos de las piernas
+=======
+>>>>>>> 9a5a61c24e9a7f91f36c0cffa3d241a4825721eb
         exoBot.IPConectarPiernas(new CPPiernaIzquierda(), new CPPiernaDerecha());
         exoBot.IPCorrer();
         exoBot.IPSaltar();
